@@ -5,6 +5,6 @@
         <div class="allposts"><a href="{{route('post.show', $post->id)}}">{{$count++}}. ({{$post->id}}) {{$post->title}}</a></div>
     @endforeach
     <div>
-        {{$posts->links()}}
+        {{$posts->withQueryString()->links()}}
     </div>
 @endsection

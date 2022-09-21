@@ -3,15 +3,24 @@
 namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\Controller;
+use App\Http\Filters\PostFilter;
+use App\Http\Requests\Post\FilterRequest;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function __invoke()
+    public function __invoke(FilterRequest $request)
     {
-        $posts = Post::paginate(15);
+        $data = $request -> validated();
+
+        $filter = app()->make(PostFilter::class, ['queryParams'=>array_filter($data)]);
+
+        $posts = Post::filter($filter)->paginate(15);
+        // dd($post);
+
+        // $posts = Post::paginate(15);
         return view('post.index', compact('posts'));
     }
 }
