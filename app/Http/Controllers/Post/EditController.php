@@ -12,6 +12,6 @@ class EditController extends Controller
     public function __invoke(Post $id)
     {
         $categories = Category::all();
-        return view('post.edit', compact('id', 'categories'));
+        return view('post.edit', compact('id', 'categories' ));
     }
 }
