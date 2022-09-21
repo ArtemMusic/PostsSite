@@ -26,3 +26,10 @@ Route::group(['namespace' => 'Post'], function(){
     Route::post('/posts','StoreController')->name('post.store');
     Route::delete('/posts/{id}','DestroyController')->name('post.destroy');
 });
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function(){ //  admin/..
+    Route::group(['namespace' => 'Post'], function(){
+        Route::get('/post','IndexController')->name('admin.post.index'); 
+    });
+});
+
