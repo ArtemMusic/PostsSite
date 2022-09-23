@@ -16,8 +16,10 @@
 
                     {{ __('You are logged in!') }}
 
+                    @can('view', auth()->user())
                     <div class="btn_post_admin">
                         <a href="/admin/posts"><- АдминПанель</a>
+                        @endcan
                         <br>
                         <a href="/posts">Посты -></a>
                     </div>

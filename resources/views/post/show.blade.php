@@ -22,6 +22,7 @@
             Удален
         @endif
     </p>
+    @can('view', auth()->user())
     <a href="{{route('post.edit', $id)}}">Редактировать</a>
     <br><br>
     <form action="{{route('post.destroy', $id)}}" method="POST">
@@ -29,11 +30,14 @@
         @method("delete")
         <button type="submit" class="btn btn-danger" href="{{route('post.destroy', $id->id)}}">Удалить</button>
     </form>
+    @endcan
     <a href="{{route('post.index')}}">Назад</a>
+    @can('view', auth()->user())
     <br>
     <br>
     <div class="btn_post_admin">
     <a href="/admin/posts"><- АдминПанель</a>
     <br>
+    @endcan
 </div>
 @endsection
