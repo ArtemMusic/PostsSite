@@ -22,7 +22,9 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
+                            @can('view', auth()->user())
                                 <a class="nav-link active" aria-current="page" href="{{route('post.create')}}">Создать пост</a>
+                            @endcan
                             </li>
                         </ul>
                     </div>

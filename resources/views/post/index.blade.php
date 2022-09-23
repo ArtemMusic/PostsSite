@@ -7,8 +7,11 @@
 <div>
     {{$posts->withQueryString()->links()}}
 </div>
+@can('view', auth()->user())
 <div class="btn_post_admin">
     <a href="/admin/posts"><- АдминПанель</a>
     <br>
 </div>
+    <a href="/login"><- Аккаунт</a>
+@endcan
 @endsection
