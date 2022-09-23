@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', "HomeController@index");
 
 Route::group(['namespace' => 'Post'], function(){
     Route::get('/posts/create','CreateController')->name('post.create');
@@ -33,3 +32,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function(){ //  admi
     });
 });
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
