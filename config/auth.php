@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'web', //заменить на web для авторизации api для jwt
         'passwords' => 'users',
     ],
 
@@ -39,6 +39,11 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        
+        'api' => [
+                'driver' => 'jwt',
+                'provider' => 'users',
         ],
     ],
 
