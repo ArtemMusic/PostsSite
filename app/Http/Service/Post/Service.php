@@ -13,6 +13,7 @@ class Service
 
     public function update($data, $post){
         $post -> update($data);
+        return $post->fresh();
     } 
     
 }
