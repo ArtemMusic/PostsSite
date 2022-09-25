@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Filters\PostFilter;
 use App\Http\Requests\Post\FilterRequest;
+use App\Http\Resources\Post\PostResource;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -15,12 +16,16 @@ class IndexController extends Controller
     {
         $data = $request -> validated();
 
+        $page = $data['page'] ?? 1;
+        $perPage = $data['per_page'] ?? 10;
+
         $filter = app()->make(PostFilter::class, ['queryParams'=>array_filter($data)]);
 
-        $posts = Post::filter($filter)->paginate(15);
-        // dd($post);
-
-        // $posts = Post::paginate(15);
+        // $posts = Post::filter($filter)->paginate($perPage, ['*'], 'page', $page);
+        // $posts = Post::all(); //Чтобы отобразить все посты а не 15
+        $posts = Post::paginate(10);
+      
+        // return PostResource::collection($posts);
         return view('post.index', compact('posts'));
     }
 }
