@@ -26,6 +26,7 @@ return new class extends Migration
             $table->foreign('tag_id', 'post_tag_tag_fk')->on('tags')->references('id');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

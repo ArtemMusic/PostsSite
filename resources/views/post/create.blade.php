@@ -26,7 +26,7 @@
     <div class="input-group mb-3">
         <label class="input-group-text" for="status">Статус</label>
         <select class="form-select" id="status" name="status">
-            <option value="0" selected >Скрыт</option>
+            <option value="0" selected>Скрыт</option>
             <option value="1">Опубликован</option>
         </select>
     </div>
@@ -34,9 +34,15 @@
         <label class="input-group-text" for="categ">Категория</label>
         <select class="form-select" id="categ" name="category_id">
             @foreach($categories as $categ)
-            <option 
-            {{$categ->id == old('category_id') ? "selected" : ""}}
-            value="{{$categ->id}}">{{$categ->title}}</option>
+            <option {{$categ->id == old('category_id') ? "selected" : ""}} value="{{$categ->id}}">{{$categ->title}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="input-group mb-3">
+    <label class="input-group-text" for="tag">Теги</label>
+        <select name="tags[]" id="tag" class="form-select" multiple aria-label="multiple select example">
+            @foreach($tags as $tag)
+            <option value="{{$tag->id}}">{{$tag->title}}</option>
             @endforeach
         </select>
     </div>
