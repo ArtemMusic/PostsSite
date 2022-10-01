@@ -40,6 +40,14 @@
             @endforeach
         </select>
     </div>
+    <div class="input-group mb-3">
+    <label class="input-group-text" for="tag">Теги</label>
+        <select name="tags[]" id="tag" class="form-select" multiple aria-label="multiple select example">
+            @foreach($tags as $tag)
+            <option value="{{$tag->id}}">{{$tag->title}}</option>
+            @endforeach
+        </select>
+    </div>
     <button type="submit" class="btn btn-primary">Обновить</button>
 </form>
 @endsection()

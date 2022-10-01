@@ -8,6 +8,15 @@
         {{$id->category_id === $categ->id ? $my_category = $categ->title : "Без категории"}}
     @endforeach -->
     <p><b>Category: </b>{{$my_category}}</p>
+    <!-- {{$my_tag = ""}} -->
+    <!-- {{$title_tag = ""}} -->
+    <p><b>Tags: </b>
+    @foreach($pt as $p_t)
+        <!-- {{$id->id == $p_t->post_id ? $my_tag = $p_t->tag_id : ""}} -->
+        @foreach($tags as $tag)
+            {{$my_tag == $tag->id ? $title_tag = $tag->title . ',' : ""}}
+        @endforeach
+    @endforeach</p>
     
     <p><b>Status: </b>
         @if($id->status == 1)

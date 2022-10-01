@@ -26,7 +26,6 @@ return new class extends Migration
             $table->index('category_id','post_categoty_idx');
             $table->foreign('category_id') -> references('id') -> on('categories');
 
-
             $table->timestamps();
             $table->softDeletes();
         });
