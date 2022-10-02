@@ -1,64 +1,33 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Этот проект - мой первый опыт в создании продукта на фреймворке Laravel.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Цель проекта: Изучение основных и необходимых технологий в разработке современных сайтов,
+получение практического опыта, написание своей документации.
 
-## About Laravel
+!Конфигурацию бд смотреть в миграциях
+!Для использования подключить бд, создать .env, выполнить composer install, npm install, php artisain migrate --seed, зарегестрировать аккаунт, и поменять через бд роль на admin для использования AdminLTE.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Реализовывая данный сайт я освоил как в теории, так и на практике следующие аспекты:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1) Язык PHP 7/8
+2) MySQL, а также реляционные и не реляционные базы данных
+3) Отношения один к одному / один ко многим / многие ко многим
+4) Laravel 8/9 и его особенности
+5) Composer
+6) Npm
+7) Паттерны SOLID и MVC
+8) Этапы создания и проектирования программного продукта
+9) Bootstrap
+10) Реализация АдминПанели
+11) Ассинхронные запросы
+12) Научился создавать RestfulAPI
+13) Освоил технологию JWT токена
+14) Начал осваивать CRUD с транзакциями 
+15) Написал свою документацию (см репозиторий LaravelDoc)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Особенности проекта:
 
-## Learning Laravel
+Сайт реализован на фреймворке Laravel 9, php 8.1.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Сделаны следующие страницы: просмотра постов, создание постов, редактирования, удаления.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Модель MVC построена на однометодных контроллерах, сервисах. Отдельно реализованы реквесты. Бд заполнена через factory & seeders. Продумана система фильтрации и пагинации, установлена AdminLTE. Также предусмотрена система распределения пользователей на admin/user через middleware & policy. Втроенны ассинхронные запросы через JWT токен, а также RestfulAPI.

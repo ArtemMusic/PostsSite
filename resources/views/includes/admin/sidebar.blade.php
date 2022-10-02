@@ -6,7 +6,7 @@
           <li class="nav-item menu-open">
           <li class="nav-header">Навигация</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/admin/posts" class="nav-link">
               <i class="nav-icon fa fa-solid fa-align-justify"></i>
               <p>
                 Посты

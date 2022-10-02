@@ -41,6 +41,7 @@
     <div class="input-group mb-3">
     <label class="input-group-text" for="tag">Теги</label>
         <select name="tags[]" id="tag" class="form-select" multiple aria-label="multiple select example">
+        <option selected value="1">-</option>
             @foreach($tags as $tag)
             <option value="{{$tag->id}}">{{$tag->title}}</option>
             @endforeach
